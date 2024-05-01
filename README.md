@@ -16,12 +16,12 @@
 
 ## Solucion de error de dependencia '(>= python 2.6)'
 1. Lo que hice fue extraer el "theftdeterrentguardian_6.0.0.11.huayra10_amd64.deb" con el comando 
-```dpkg-deb -R ./theftdeterrentguardian_6.0.0.11.huayra10_amd64.deb guardian``` , dentro de 
+```dpkg-deb -R ./theftdeterrentguardian_6.0.0.11.huayra10_amd64.deb guardian``` y dentro de 
 ./guardian modificar el archivo "control" ubicado en la carpeta 'DEBIAN' (./guardian/DEBIAN/control),
 con leafpad o cualquier editor de texto abrir 'control'. 
 Nos ubicamos en la linea ```Pre-Depends: python (>= 2.6)```, y modificamos ```python``` por ```python3```
 en la condicion ```(>= 2.6)``` a ```(>= 3)``` en mi caso mi version es 3.11.2, y guardar cambios y salir.
-2. Nos ubicamos en la carpeta /Descargas y debemos empaquetar ``guardian```, borre el anterior paquete ```theftdeterrentguardian_6.0.0.11.huayra10_amd64.deb```:
+2. Nos ubicamos en la carpeta /Descargas y debemos empaquetar ```guardian```, borre el anterior paquete ```theftdeterrentguardian_6.0.0.11.huayra10_amd64.deb```:
 	```dpkg-deb -b guardian theftdeterrentguardian_6.0.0.11.huayra10_amd64.deb```
 3. Ahora puede instalarlo con el comando del paso 7. Se creara un shorcut en el menu y 
 desde ahi podra ejecutarlo 'Theft Deterrent Client', finalmente siga el paso 13.
